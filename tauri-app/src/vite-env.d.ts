@@ -1,0 +1,21 @@
+/// <reference types="vite/client" />
+
+declare module "*.vue" {
+  import type { DefineComponent } from "vue";
+  const component: DefineComponent<{}, {}, any>;
+  export default component;
+}
+const config = {
+  host: "https://openapi.suanleme.vip",  // 从用户输入或配置获取
+  version: "1.0.0",
+  token: "cc8398a6-7a8f-439a-871a-d6a9ae997187-20250417174728",
+  rsa_pubk: "MIIBCgKCAQEAt3OjweXQ08fguv04Wxlu3hqlL1zgS7kZ1oF7B663raxAr1Sto5RImiYgYjIW1nL+7lel3jpYj29EE9GRoeZOYKyY3nEJmw4/lmxhHCbc19W+n+czpNlwaW8bGQ7pd7b38xuN4OZ8WiB+QpFQXv8aOZOLe636ySE8+XoSIL3GwyiUn0dhe4K4oZBU09t3rnFPRu0tTN9vmIa0JXGdtRa7KF+zRxIVvBxhViVtd5MXFDzATJcOcLxp/QGmslIOGBbN6RlQPYAcu9Dvr2V1PlcS+l00WtokBLiovJgW2wErkBjLYVOxIpnvydielSOZqsBnBa4gWO/4Nz8v2kUvY4XZKwIDAQAB",
+  rsa_prik: "MIIEpAIBAAKCAQEA5YDdrtu7vmanrWU1yO3N0YFcOLEleAKk697/xPqDwroC4AsFKHqqF1tyd0dVRUJKwVYeIuE9QUxz1BCIuaA4g6pf8LPcIh3brJLHroB8TfoI4t/+vMUVKMxjYDupBW/kdp/k38qDKonuQGrdSk2qUt8u8OjTnycJZIzcz++Fj6W6zFtHaW4+zTZPo70mN4TQRq9WRzFOvkbDx4jC0N6rzmTidQdqIuMplTFioERuFCjbE7ra9B0pWaaOA431lwh3hgmCRLvqE1l3kxEvQlnW8Uid6AH3tN3jqm2ZcTVSEcuK+rs0jNbdsfkra9+sJGeguQzQ4IHeqbJ32CaHc6RhOQIDAQABAoIBAQDY2d6dLfpDefPNnugnJqtm3fgpiRiCQN1cEaVSlfKRt/ingUIqcVzuHPYXRkuH2Y+RBrIK+xBJ9tcq9UR7QKylnAJzCT9i7Rt4AGi0taq+cxaaaFPmQcIwfo8Xise133fbrlEwM8WkGBgKve7CGohpLYDJGPV8WAJEA+VQhF2Kz5+QKDPFftkfNxGwwfjnn+W3H/B3KoeM9AqhBSXTZs7R8YY295lUoLM8hEHh8WWNsuZ7UnihJMqBF8L6MSMBwGx0s3zTiiKoZOsPnSJt8aOIbD+HscL5YDJMlmX7twxSr+5ib5xqV9j72fsFMgbxFRwaQ9VZzjv5CrYh9LfpXZIBAoGBAPSzXp1aR/a8AqFVXQt4+xLytc5Q3G0Tr6WMrAHoI4xG3OtGdgMjqPNvsdqH6FHr8BnAvo/qUaAYqPDh6Pogc+hyAWORC2aFIiVXMETRU2/GZPf7bnD3KFJGTecgyFsNQyQOKIgSeCiHevtOOPRsSFxt7fKnJz7U0nnu5s+ImE1pAoGBAPAZ2QuROwYci4j3ud+rb2h3ntBpchLUyvpbq+Ss0SP1Q+atMjvvbT5PeDqpopLb7/pMpex32v/HbBfbQ9vqleOkB+pJGaSq4BxKOzqp08dq2lrZX0bdUFEgno2cdKu0KjTPHQWiWpfINHC13U3B9glgeCZQ4xNKq09uzTZyMWtRAoGAPzWKTjlA96JPR5+GXm1M5fMeNYI7vk1khO4WjJOLgzPW40ubNmpivSdwGNQclfTNW8mnMAPGPAXCth6VEO+LIVM5up+AA2aGkIC6LjyoQepMsKYZPEML/ly8yOR1/NcrLcgefi/PLCD7CqmFGtZRxtZ6rcCx6ZAOIoMsyhUtymkCgYBCsDs73kPRp74N9hi3imtwTcFby932YwpZzXqKEoIohagtey+3vAHQy8vuJ03TkqkuEXoImyXF44MfgTRw8dBeISJdrZ4kwZ1r3iZjXeZHvmMV1siC61eyoOfJF4rEYk9SybAa74RQIjiGkcz9GwGWiyf0JIVdx2CbuH/hPoiBcQKBgQCGSHjfjhI6M0HdGI6xEhvS/ktYp8stUaf1Nu3Ph9JJJvENIwjcS1Jh+Mojauga1uAMhcUCpH2jZARZmt6gi66wuqyyaL2cwmtYLXllvqOtadVxuuSVIIdZ9Yx4WB1So941RrgIjf6MMPwq6gU/uCzO/FP70z6RFrmqScWJTNDxyA=="
+};
+
+// 调用 `slmv` 命令并传递 `config` 对象
+tauri.invoke('slmv', { config }).then(response => {
+    console.log(response);
+}).catch(error => {
+    console.error(error);
+});

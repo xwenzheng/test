@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@vueuse/core": "^13.1.0"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.5.0"
+  }
+}

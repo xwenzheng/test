@@ -1,0 +1,12 @@
+# 忽略 node_modules
+node_modules/
+
+# 忽略 Tauri 编译输出
+/src-tauri/target/
+/src-tauri/.cargo/
+/src-tauri/Cargo.lock
+
+# 忽略日志和临时文件
+*.log
+.DS_Store
+Thumbs.db

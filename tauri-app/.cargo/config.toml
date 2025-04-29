@@ -1,0 +1,17 @@
+[source.crates-io]
+registry = "https://github.com/rust-lang/crates.io-index"
+replace-with = 'suanleme-cratesio'
+ 
+[source.tuna]
+registry = "https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git"
+ 
+[source.rustcc]
+registry = "https://code.aliyun.com/rustcc/crates.io-index.git"
+
+[source.suanleme-cratesio]
+registry = "sparse+http://cargo.suanleme.local:8000/api/v1/cratesio/"
+
+[registries.suanleme]
+index = "sparse+http://cargo.suanleme.local:8000/api/v1/crates/"
+credential-provider = ["cargo:token"]
+token = "RdMyeIPhHw9UD8QwJDfwV8gP92fJYm29"
