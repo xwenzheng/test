@@ -1,0 +1,5 @@
+# 设置文本文件为自动处理换行符
+* text=auto
+
+# 保持换行符为 LF（推荐给跨平台项目，尤其是 Node.js / Rust / Vue / Tauri 项目）
+* text eol=lf
